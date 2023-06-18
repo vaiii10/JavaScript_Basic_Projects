@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color generator</title>
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            transition: 0.2s;
+        }
+
+
+
+        .colorbg {
+            /* height: 100vh;
+            width: 100%; */
+        }
+
+        .container {
+            margin-top: 280px;
+            margin-left: 550px;
+            justify-content: center;
+            background-color: rgb(29, 19, 1);
+            width: 28%;
+            height: 17vh;
+            border-radius: 15px;
+            border: 10px solid rgb(236, 231, 231);
+        }
+
+        .colornumber {
+            margin-left: 155px;
+            padding-top: 20px;
+            font-size: 35px;
+            color: red;
+        }
+
+        .btn {
+            width: 93%;
+            margin-left: 13px;
+            margin-top: 16px;
+            cursor: pointer;
+            border: none;
+            border: 3px solid white;
+            background-color: rgb(15, 16, 15);
+            font-size: 20px;
+            border-radius: 7px;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="colorbg">
+
+        <div class="container">
+
+            <div class="colornumber" id="colornumber">
+                content
+            </div>
+
+            <button class="btn" id="btn">
+                Generate
+            </button>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const getcolor = () => {
+
+            const randomnumber = Math.floor(Math.random() * 16777215)
+            // console.log(randomnumber)
+
+            const randomcode = "#" + randomnumber.toString(16)
+            console.log(randomnumber, randomcode)
+
+            // where to keep random code
+            document.body.style.backgroundColor = randomcode
+
+            // output container see
+            document.getElementById("colornumber").innerHTML = randomcode
+
+        }
+
+
+        // event call
+        document.getElementById("btn").addEventListener(
+            "click",
+            getcolor
+        )
+
+        // initial call
+        getcolor()
+
+    </script>
+</body>
+
+</html>
